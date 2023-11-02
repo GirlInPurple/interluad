@@ -1,12 +1,12 @@
 import os, typing, sys
-
-# cosmetic text coloring
 RED = '\u001b[31m'
 GREEN = '\u001b[32m'
 BOLD = '\033[1m'
 RESET = "\u001b[0m"
 
 def clear() -> None:
+    """Clear the console on most OSes.
+    """
     if sys.platform=='win32':
         os.system('cls')
     if sys.platform=='darwin':
@@ -52,18 +52,17 @@ def charAfterString(string: str, target: str, distance: int, retMode: bool = Fal
 
     Returns:
         str: The character after the specified string inside the input string.
-        list: If retMode is True, returns the string back if needed.
+        list: If `retMode` is True, returns the string back as well.
     """
     if retMode != True: return string.split(target)[distance]
     return string.split(target)[distance], string.split(target)
 
 def checkFiles(dir: str = "") -> None:
-    """The main function, check all the `.lua` files in the local dirs. An alternative dir can be specified.
+    """The main function, checks all the `.lua` files in the local dirs. An alternative dir can be specified.
 
     Args:
         dir (str, optional): An alternate directory to act on. Defaults to whatever `localFiles()` outputs.
     """
-    
     # Setup
     if dir == "": dir = localFiles()
     folders = listFiles(fileType="folder")
