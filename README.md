@@ -6,6 +6,53 @@ This repo assumes you already have a decent understanding of Bloxel's computer s
 
 Note: this repo is under heavy development, and currently no functioning version has been released yet.
 
+## Branch Specific; Diffie-Hellman Transfer Protocol
+
+[Diffie-Hellman Key Exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange), from now on called <span title="Diffie-Hellman Transfer Protocol">DHTP</span> on this page, is a relatively simple and widely used form of encryption that uses 2 way functions to encrypt data running over the internet.
+
+Here is a demontrastion of how it works;
+
+- Client 1 sends this json;
+  ```json
+  {
+    "adrs":"2"
+    "from":"1"
+    "encryp":"dhtp_1" // notice it has a "_1" at the end? thats what step its on
+    "content":{
+      "your content here":"garbled and encrypted mess"
+    }
+  }
+  ```
+- Client 2 sends this json back;
+  ```json
+  {
+    "adrs":"1"
+    "from":"2"
+    "encryp":"dhtp_2"
+    "content":{
+      "your content here":"even more garbled and encrypted mess"
+    }
+  }
+  ```
+- Client 1 decrypts their side of the encryption;
+  ```json
+  {
+    "adrs":"2"
+    "from":"1"
+    "encryp":"dhtp_3"
+    "content":{
+      "your content here":"garbled and encrypted mess, but with only client 2's encryption"
+    }
+  }
+  ```
+- From there, all Client 2 needs to do is decrypt the packet, and use whatever is inside
+
+Athough, there are 2 issues with it;
+- Its slow as hell
+- and there is no need for encryption in a Roblox game
+
+Thanks to ThePokemonkey123 on the Bloxel Discord for bringing the idea of encryption up.
+
 ## How it works
 
 3 things are needed to get this working:
