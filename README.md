@@ -7,7 +7,7 @@ An open source project for the Roblox game [Bloxel](https://www.roblox.com/games
 
 This repo assumes you already have a decent understanding of Bloxel's computer system and some basic programming knowledge. If not, please check the [Bloxel Wiki](https://bloxel.miraheze.org/wiki/Technology_Blocks), read up on it in the [Discord](https://discord.gg/wMfVhfD), or check out [this User's video](https://bloxel.miraheze.org/wiki/Technology_Blocks#Tutorial) on the topic.
 
-There is also a branch of this repo with encryption support, called [DHTP](https://github.com/GirlInPurple/interluad/tree/diffie-hellman-transfer-protocol). This repo is still under heavy development, so please check [the releases](https://github.com/GirlInPurple/interluad/releases) for working versions. I should also mention that all examples on the repo are based on the newest version of Interluad only, no forks or modifications (unless specified)
+This repo is still under heavy development, so please check [the releases](https://github.com/GirlInPurple/interluad/releases) for working versions. I should also mention that all examples on the repo are based on the newest version of Interluad only, no forks or modifications (unless specified)
 
 ## How it works
 
@@ -50,7 +50,7 @@ The json is more-or-less completely handled by the Connector, but if you want to
   "adrs":"2", // target address
   "from":"1", // your address, added automatically if sending
   "encrypt":{
-    // explained in the DHTP branch
+    // explained in the DHTP folder
     // if sent a json with the exact value of "encrypt", it will be added here instead
   },
   "content":{
@@ -95,7 +95,7 @@ Just copy-paste the contents of your connector of choice, link up ports 1 and 2,
 
 #### Filter / DHTP
 
-
+You can ream more about DHTP [here](./dhtp/DHTP-explanation.md).
 
 ### Local Networks
 
@@ -106,5 +106,11 @@ Just copy-paste the contents of your connector of choice, link up ports 1 and 2,
 There is a test site in the works, a little east of `!tp spawn3`. No waypoint or builds there as of now.
 
 The [Python file](./checkAndCompile.py) is for making sure that there are not immediate issues in the latest commit, like how many ports you are using and the length of the file. This will run automatically and can be viewed [here](https://github.com/GirlInPurple/interluad/actions).
+
+If you end up passing the 800 char limit, you can try a few things;
+
+- get rid of indentation
+- reformat the code to use less chars
+- if all else fails, you can make another file and use ports to talk to each other
 
 MIT license cause no need to lock down the code, any commits will be under MIT as well
