@@ -71,29 +71,32 @@ def checkFiles(dir: str = "") -> None:
     for iterFolder in folders:
         filesInFolder = listFiles(fileType="file", dir=os.path.join(localFiles(), iterFolder))
         
-        if iterFolder != ".git": 
+        if iterFolder not in [".git","assets"]: 
         
             for iterFile in filesInFolder:
                 
                 readFile = os.path.join(localFiles(), iterFolder, iterFile)
-                with open(readFile, 'r') as f:
-                    cont = f.read()
-                    print(f"{GREEN}Contents of {iterFile} / {readFile}:{RESET}\n\n{cont}\n")
+                
+                if os.path.splitext(readFile)[1] == '.lua':
                     
-                    if len(cont) >= 800:
-                        print(f"{RED}{iterFile} is over the 800 character limit! it is at {len(cont)}. Please refactor!{RESET}\n\n")
-                    else:
-                        print(f"{GREEN}{iterFile} is under the 800 character limit. it is at {len(cont)}. You can commit.{RESET}\n\n")
-                    
-                    """
-                    portsString = cont
-                    clearPorts = False
-                    while clearPorts == False:
-                        portsString = charAfterString(string=portsString, target="port[", distance=0, retMode=True)
-                        print(portsString[0], portsString[1])
-                        if portsString[0] == portsString[1]:
-                            clearPorts = True
-                    """
+                    with open(readFile, 'r') as f:
+                        cont = f.read()
+                        print(f"{GREEN}Contents of {iterFile} / {readFile}:{RESET}\n\n{cont}\n")
+                        
+                        if len(cont) >= 800:
+                            print(f"{RED}{iterFile} is over the 800 character limit! it is at {len(cont)}. Please refactor!{RESET}\n\n")
+                        else:
+                            print(f"{GREEN}{iterFile} is under the 800 character limit. it is at {len(cont)}. You can commit.{RESET}\n\n")
+                        
+                        """
+                        portsString = cont
+                        clearPorts = False
+                        while clearPorts == False:
+                            portsString = charAfterString(string=portsString, target="port[", distance=0, retMode=True)
+                            print(portsString[0], portsString[1])
+                            if portsString[0] == portsString[1]:
+                                clearPorts = True
+                        """
     
 if __name__ == "__main__":
     clear()
