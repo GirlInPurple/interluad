@@ -69,13 +69,13 @@ def checkFiles(dir: str = "") -> None:
     
     # Loop
     for iterFolder in folders:
-        filesInFolder = listFiles(fileType="file", dir=f"{localFiles()}\\{iterFolder}")
+        filesInFolder = listFiles(fileType="file", dir=os.path.join(localFiles(), iterFolder))
         
         if iterFolder != ".git": 
         
             for iterFile in filesInFolder:
                 
-                readFile = f"{localFiles()}\\{iterFolder}\\{iterFile}"
+                readFile = os.path.join(localFiles(), iterFolder, iterFile)
                 with open(readFile, 'r') as f:
                     cont = f.read()
                     print(f"{GREEN}Contents of {iterFile} / {readFile}:{RESET}\n\n{cont}\n")
