@@ -78,7 +78,7 @@ def checkFiles(dir: str = "") -> None:
                 readFile = f"{localFiles()}\\{iterFolder}\\{iterFile}"
                 with open(readFile, 'r') as f:
                     cont = f.read()
-                    print(f"{GREEN}Contents of {iterFile}:{RESET}\n\n{cont}\n")
+                    print(f"{GREEN}Contents of {iterFile} / {readFile}:{RESET}\n\n{cont}\n")
                     
                     if len(cont) >= 800:
                         print(f"{RED}{iterFile} is over the 800 character limit! it is at {len(cont)}. Please refactor!{RESET}\n\n")
