@@ -5,7 +5,7 @@
 
 An open source project for the Roblox game [Bloxel](https://www.roblox.com/games/1427028360/Bloxel) that partially recreates the internet.
 
-This repo assumes you already have a decent understanding of Bloxel's computer system and some basic programming knowledge. If not, please check the [Bloxel Wiki](https://bloxel.miraheze.org/wiki/Technology_Blocks), read up on it in the [Discord](https://discord.gg/wMfVhfD), or check out [this User's video](https://bloxel.miraheze.org/wiki/Technology_Blocks#Tutorial) on the topic.
+This repo assumes you already have a decent understanding of Bloxel's computer system and some basic programming knowledge. If not, please check the [Bloxel Wiki](https://bloxel.miraheze.org/wiki/Technology_Blocks), read up on it in the [Discord](https://discord.gg/wMfVhfD), or check out [Jens' videos](https://www.youtube.com/playlist?list=PLn__XYIOY8DmnEopoQDuvgMh6X4Gg4fzJ) on the topic.
 
 This repo is still under heavy development, so please check [the releases](https://github.com/GirlInPurple/interluad/releases) for working versions. I should also mention that all examples on the repo are based on the newest version of Interluad only, no forks or modifications (unless specified)
 
